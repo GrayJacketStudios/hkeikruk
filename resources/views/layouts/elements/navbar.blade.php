@@ -21,13 +21,7 @@
       @endif
         <a class="nav-link" href="{{ URL::to('habitaciones')}}">@lang('header.habitaciones')</a>
       </li>
-      @if(Request::segment(1) == 'tarifas')
-        <li class="nav-item active">
-      @else
-        <li class="nav-item">
-      @endif
-        <a class="nav-link" href="{{ URL::to('tarifas')}}">@lang('header.tarifas')</a>
-      </li>
+
       @if(Request::segment(1) == 'interes')
         <li class="nav-item active">
       @else

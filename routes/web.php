@@ -23,6 +23,10 @@ Route::get('tarifas', function(){
     return view('tarifas');
 });
 
+Route::get('galeria', function(){
+    return view('galeria');
+});
+
 
 Route::get('lang/{lang}', function ($lang) {
     session(['lang' => $lang]);
