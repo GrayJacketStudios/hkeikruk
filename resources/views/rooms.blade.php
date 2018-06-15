@@ -19,7 +19,12 @@
                 <li class="list-group-item">
                     <div class="row">
                         <div class="col-sm-3">
-                            <img src="{{URL::asset('img/habitaciones/hab_1.jpg')}}" class="rounded mx-auto d-block img-thumbnail">
+                            <section class="gallery-block grid-gallery" style="padding-bottom: 0px !important; padding-top: 0px !important;">
+                                <a class="lightbox rounded mx-auto d-block img-thumbnail" href="{{URL::asset('img/habitaciones/hab_1.jpg')}}">
+                                    <img class="img-fluid image scale-on-hover" src="{{URL::asset('img/habitaciones/hab_1.jpg')}}">
+                                </a>
+                            </section>
+                            
                         </div>
                         <div class="col-sm-9">
                             <h4>Habitación en <strong>suite Familiar</strong></h4>
@@ -38,7 +43,11 @@
                 <li class="list-group-item">
                     <div class="row">
                         <div class="col-sm-3">
-                            <img src="{{URL::asset('img/habitaciones/hab_3.jpg')}}" class="rounded mx-auto d-block img-thumbnail">
+                                <section class="gallery-block grid-gallery" style="padding-bottom: 0px !important; padding-top: 0px !important;">
+                                        <a class="lightbox rounded mx-auto d-block img-thumbnail" href="{{URL::asset('img/habitaciones/hab_3.jpg')}}">
+                                            <img class="img-fluid image scale-on-hover" src="{{URL::asset('img/habitaciones/hab_3.jpg')}}">
+                                        </a>
+                                    </section>
                         </div>
                         <div class="col-sm-9">
                             <h4>Habitación matrimonial o twin en <strong>Suite</strong></h4>
@@ -56,7 +65,11 @@
                 <li class="list-group-item">
                     <div class="row">
                         <div class="col-sm-3">
-                            <img src="{{URL::asset('img/habitaciones/hab_2.jpg')}}" class="rounded mx-auto d-block img-thumbnail">
+                                <section class="gallery-block grid-gallery" style="padding-bottom: 0px !important; padding-top: 0px !important;">
+                                        <a class="lightbox rounded mx-auto d-block img-thumbnail" href="{{URL::asset('img/habitaciones/hab_2.jpg')}}">
+                                            <img class="img-fluid image scale-on-hover" src="{{URL::asset('img/habitaciones/hab_2.jpg')}}">
+                                        </a>
+                                    </section>
                         </div>
                         <div class="col-sm-9">
                             <h4>Habitación matrimonial <strong>Junior</strong></h4>
@@ -74,7 +87,12 @@
                 <li class="list-group-item">
                     <div class="row">
                         <div class="col-sm-3">
-                            <img src="{{URL::asset('img/habitaciones/hab_4.jpg')}}" class="rounded mx-auto d-block img-thumbnail">
+                                <section class="gallery-block grid-gallery" style="padding-bottom: 0px !important; padding-top: 0px !important;">
+                                        <a class="lightbox rounded mx-auto d-block img-thumbnail" href="{{URL::asset('img/habitaciones/hab_4.jpg')}}">
+                                            <img class="img-fluid image scale-on-hover" src="{{URL::asset('img/habitaciones/hab_4.jpg')}}">
+                                            
+                                        </a>
+                                    </section>
                         </div>
                         <div class="col-sm-9">
                             <h4>Habitación matrimonial o twin <strong>Baño compartido</strong></h4>
@@ -164,6 +182,9 @@
         </div>
 
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script>
+        baguetteBox.run('.grid-gallery', { animation: 'slideIn'});
+    </script>
 
 @endsection
