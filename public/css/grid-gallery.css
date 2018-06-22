@@ -1,6 +1,6 @@
 .gallery-block.grid-gallery{
-  padding-bottom: 60px;
-  padding-top: 60px;
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
 
 .gallery-block.grid-gallery .heading{
@@ -33,4 +33,9 @@
     transform: scale(1.05);
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15) !important;
   }
+}
+
+.galeria { 
+  height: 350px;
+  width: 350px;
 }
