@@ -25,6 +25,10 @@ a:focus{
 
 
 
+.img-card {
+	height: 250px;
+}
+
 .brace {
 	width: auto;
 	min-width: 35px;

@@ -27,6 +27,14 @@ Route::get('galeria', function(){
     return view('galeria');
 });
 
+Route::get('opiniones', function(){
+    return view('opiniones');
+});
+
+Route::get('interes', function(){
+    return view('interes');
+});
+
 
 Route::get('lang/{lang}', function ($lang) {
     session(['lang' => $lang]);

@@ -1,7 +1,7 @@
 <?php
     return [
         'desayuno_1' => 'Included breakfast',
-        'desayuno_2' => 'Enjoy a delicious continental breakfast included in your reservation, begining from 7:00 until 10:00.',
+        'desayuno_2' => 'Enjoy a delicious continental breakfast included in your reservation, beginning from 7:00 until 10:00.',
         'pago_1' => 'Different pay methods',
         'pago_2' => 'You can pay with Cash (US Dollars, CLP pesos, ARS pesos), Credit card, or online transfer (bank or paypal).',
         'estacionamiento_1' => 'Parking lot',

@@ -22,19 +22,13 @@
         <a class="nav-link" href="{{ URL::to('habitaciones')}}">@lang('header.habitaciones')</a>
       </li>
 
-      @if(Request::segment(1) == 'interes')
-        <li class="nav-item active">
-      @else
-        <li class="nav-item">
-      @endif
-        <a class="nav-link" href="{{ URL::to('interes')}}">@lang('header.interes')</a>
-      </li>
+     
       @if(Request::segment(1) == 'opiniones')
         <li class="nav-item active">
       @else
         <li class="nav-item">
       @endif
-        <a class="nav-link" href="{{ URL::to('opiniones')}}">@lang('header.opiniones')</a>
+        <a class="nav-link" href="{{ URL::to('/')}}#testimonials">@lang('header.opiniones')</a>
       </li>
       @if(Request::segment(1) == 'galeria')
         <li class="nav-item active">
@@ -43,6 +37,15 @@
       @endif
         <a class="nav-link" href="{{ URL::to('galeria')}}">@lang('header.galeria')</a>
       </li>
+
+    @if(Request::segment(1) == 'interes')
+      <li class="nav-item active">
+    @else
+      <li class="nav-item">
+    @endif
+      <a class="nav-link" href="{{ URL::to('interes')}}">@lang('header.interes')</a>
+    </li>
+
       @if(Request::segment(1) == 'contacto')
         <li class="nav-item active">
       @else
