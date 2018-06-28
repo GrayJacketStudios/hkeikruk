@@ -6,7 +6,7 @@
 <section class="gallery-block grid-gallery">
     <div class="container">
         <div class="heading">
-            <h2>Galeria de nuestro hostal</h2>
+            <h2>@lang("galeria.titulo")</h2>
         </div>
         <div class="row">
             <div class="col-md-6 col-lg-4 item">

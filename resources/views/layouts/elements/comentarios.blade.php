@@ -3,7 +3,7 @@
 
 		<div class="container">
 				<center>
-						<h3>Comentarios</h3>
+						<h3>@lang('body.comentarios')</h3>
 						</center>
 						<hr class="brace"/>
 						<br>

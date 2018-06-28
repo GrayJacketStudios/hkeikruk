@@ -27,21 +27,21 @@
                     </div>
             </div>
             <div class="col-sm-7">
-                <h4>Envianos un mensaje</h4>
+                <h4>@lang('contacto.mensaje')</h4>
                 {!! Form::open(['route' => 'contact.store']) !!}
     
                 <div class="form-group">
-                    {!! Form::label('name', 'Tu nombre') !!}
+                    <label for="name">@lang("contacto.nombre")</label>
                     {!! Form::text('name', null, ['class' => 'form-control', 'required' => 'true']) !!}
                 </div>
                 
                 <div class="form-group">
-                    {!! Form::label('email', 'Correo electronico') !!}
+                        <label for="email">@lang("contacto.correo")</label>
                     {!! Form::email('email', null, ['class' => 'form-control', 'required' => 'true']) !!}
                 </div>
                 
                 <div class="form-group">
-                        {!! Form::label('msg', 'Consulta') !!}
+                        <label for="msg">@lang("contacto.consulta")</label>
                         <br>
                     {!! Form::textarea('msg', null, ['class' => 'form-control', 'rows' => '3', 'required' => 'true']) !!}
                 </div>
