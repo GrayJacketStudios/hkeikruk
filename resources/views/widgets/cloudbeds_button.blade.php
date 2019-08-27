@@ -13,7 +13,7 @@
       scripts.parentNode.insertBefore(script, scripts);
     }
     
-    load('http://localhost:8000/js/cloudbeds.js');
+    load('http://hostalkeikruk.cl/js/cloudbeds.js');
     
 }());
         </script>          

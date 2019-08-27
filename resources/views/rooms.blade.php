@@ -22,6 +22,7 @@
                             <section class="gallery-block grid-gallery" style="padding-bottom: 0px !important; padding-top: 0px !important;">
                                 <a class="lightbox rounded mx-auto d-block img-thumbnail" href="{{URL::asset('img/habitaciones/hab_1.jpg')}}">
                                     <img class="img-fluid image scale-on-hover" src="{{URL::asset('img/habitaciones/hab_1.jpg')}}">
+
                                 </a>
                             </section>
                             

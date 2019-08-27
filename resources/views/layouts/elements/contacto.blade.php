@@ -16,7 +16,7 @@
                     <strong>Chiloé 1218<br/>
                     Punta Arenas, Chile<br/>
                     @lang('contacto.telefono'): +56 (61) 224 5574<br/>
-                    @lang('contacto.celular'): +56 (9) 8401 4475<br/>
+                    @lang('contacto.celular'): +56 (9) 7149 2771<br/>
                     @lang('contacto.correo'): contacto@hostalkeikruk.cl<br/>
                     </strong>
                     </address>

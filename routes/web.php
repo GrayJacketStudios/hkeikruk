@@ -19,6 +19,10 @@ Route::get('habitaciones', function(){
     return view('rooms');
 });
 
+Route::get('reservar', function(){
+    return view('reservar');
+});
+
 Route::get('tarifas', function(){
     return view('tarifas');
 });
@@ -46,3 +50,11 @@ Route::get('lang/{lang}', function ($lang) {
 
 Route::get('contacto', 'ContactController@create')->name('contact.create');
 Route::post('contact', 'ContactController@store')->name('contact.store');
+
+
+Route::resource('api/users','UserController');
+
+Route::get('api/users/{usuario}/{password}','UserController@iniciaSesion');
+
+
+Route::get('checkOcupado/{room}/{FI}/{FT}','ReservasController@checkRoom');
