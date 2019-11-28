@@ -90,10 +90,18 @@
                         <label for="f_salida">Fecha de salida</label>
                         <input type="date" class="form-control" id="f_salida" step="1" min="{{Carbon::tomorrow()->format('Y-m-d')}}" required onchange="check_disponible();">
                     </div>
-                    
+
+
+                    <div id="listaHabitaciones">
+                        
+                    </div>                    
                     <script>
-                        let familiar, suite, junior, comp;
+                        let familiar, suite, junior, comp, num;
+                        const divListHab = document.getElementById("listaHabitaciones");
                         function check_disponible(){
+                            familiar = suite = junior = comp = -1;
+                            num = 0;
+                            divListHab.innerHTML = "<center>Buscando habitaciones disponibles<br><progress max='0' value='0'></progress></center>";
                             let f_entrada = document.getElementById("f_ingreso").value;
                             let f_salida = document.getElementById("f_salida").value;
 
@@ -102,6 +110,8 @@
                                 url: `/checkOcupado/familiar/${f_entrada}/${f_salida}`,
                                 success: function(res) {
                                 familiar = res;
+                                console.log("familiar: "+res);
+                                check_complete();
                                 }
                             });
                             
@@ -110,6 +120,8 @@
                                 url: `/checkOcupado/junior/${f_entrada}/${f_salida}`,
                                 success: function(res) {
                                 junior = res;
+                                console.log("Junior: "+res);
+                                check_complete();
                                 }
                             });
 
@@ -118,6 +130,8 @@
                                 url: `/checkOcupado/suite/${f_entrada}/${f_salida}`,
                                 success: function(res) {
                                 suite = res;
+                                console.log("Suite: "+res);
+                                check_complete();
                                 }
                             });
 
@@ -126,9 +140,99 @@
                                 url: `/checkOcupado/comp/${f_entrada}/${f_salida}`,
                                 success: function(res) {
                                 comp = res;
+                                console.log("Comp: "+res);
+                                check_complete();
                                 }
                             });
 
+
+
+                            
+                        }
+
+                        function check_complete(){
+                            num++;
+                            divListHab.innerHTML = "<center>Buscando habitaciones disponibles<br><progress max='"+4+"' value='"+num+"'></progress></center>";
+                            if(num >= 4){
+                                show_Habitaciones();
+                            }
+                            return;
+                        }
+
+
+                        function add_room(hab, disp){
+                            let card = 
+                            `<div class="col-sm-4">
+                                <div class="card" style="width: 100%;">`;
+                            switch(hab){
+                                case "familiar":
+                                    card += 
+                                    `<img src="{{URL::asset('img/habitaciones/hab_1.jpg')}}" class="card-img-top" alt="Habitación familiar | Habitación Cuadruple">
+                                    <div class="card-body">
+                                        <h5 class="card-title">@lang('habitaciones.hab_1Titulo')</h5>
+                                        <p class="card-text">@lang('habitaciones.hab_1Text')</p>
+                                        
+                                    `;
+                                    break;
+                                case "junior":
+                                    card += 
+                                    `<img src="{{URL::asset('img/habitaciones/hab_2.jpg')}}" class="card-img-top" alt="Habitación en suite">
+                                    <div class="card-body">
+                                        <h5 class="card-title">@lang('habitaciones.hab_3Titulo')</h5>
+                                        <p class="card-text">@lang('habitaciones.hab_3Text')</p>
+                                        
+                                    `;
+                                    break;
+                                case "suite":
+                                    card += 
+                                    `<img src="{{URL::asset('img/habitaciones/hab_3.jpg')}}" class="card-img-top" alt="Habitación junior">
+                                    <div class="card-body">
+                                        <h5 class="card-title">@lang('habitaciones.hab_2Titulo')</h5>
+                                        <p class="card-text">@lang('habitaciones.hab_2Text')</p>
+                                        
+                                    `;
+                                    break;
+                                case "comp":
+                                    card += 
+                                    `<img src="{{URL::asset('img/habitaciones/hab_4.jpg')}}" class="card-img-top" alt="Habitación con baño compartido">
+                                    <div class="card-body">
+                                        <h5 class="card-title">@lang('habitaciones.hab_4Titulo')</h5>
+                                        <p class="card-text">@lang('habitaciones.hab_4Text')</p>
+                                        
+                                    `;
+                                    break;
+                            }
+
+
+                            card += `
+                                        <input type="number" value="1" min="1" max="${disp}" class="form-control">
+                                        <a href="#" class="btn btn-primary">@lang('reservar.reservarBtn')</a>
+                                    </div>
+                                </div>
+                            </div>`
+                            return card;
+                        }
+
+
+                        function show_Habitaciones(){
+                            let card = "";
+                            if(familiar == 0 && suite == 0 && junior == 0 && comp == 0){
+                                divListHab.innerHTML = "<h4>Para las fechas seleccionadas no hay habitaciones disponibles</h4>";
+                                return;
+                            }
+                            if(familiar >= 1){card += add_room("familiar", familiar);}
+                            if(suite >= 1){card += add_room("suite", suite);}
+                            if(junior >= 1){card += add_room("junior", junior);}
+                            if(comp >= 1){card += add_room("comp", comp);}
+                            divListHab.innerHTML = 
+                            `<div class='container'>
+                                <div class='row'>
+                                    ${card}
+                                </div>
+                            </div>
+                                `;
+
+                                
 
 
                         }
