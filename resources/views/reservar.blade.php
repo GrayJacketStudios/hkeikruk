@@ -232,6 +232,16 @@
                             </div>
                                 `;
 
+                                $.ajax({
+                                type: "GET",
+                                url: `/checkOcupado/suite/${f_entrada}/${f_salida}`,
+                                success: function(res) {
+                                suite = res;
+                                console.log("Suite: "+res);
+                                check_complete();
+                                }
+                            });
+
                                 
 
 

@@ -55,6 +55,22 @@ class ReservasController extends Controller
         
     }
 
+    //Funcion que devuelve si la fecha entregada es temporada baja (1) o temporada alta (2) 
+    public function getTemporada($fecha){
+        $fecha_explode = explode("/",$fecha);
+        if(($fecha_explode[0] >=01 && $fecha_explode[1] >= 05) && ($fecha_explode[0] <= 30 && $fecha_explode[1] <= 09) )
+            return 1;
+        else
+            return 2;
+
+
+    }
+
+    //Funcion que devuelve un array con los valores en CLP y USD de una habitacion segun fecha entregada
+    public function getPrecios($fecha, $habitacion){
+        
+    }
+
 
 
 }
