@@ -9,7 +9,7 @@ return [
     'contacto' => 'Contactanos',
     'idioma' => 'Español',
     'reserva' => 'RESERVA UNA HABITACIÓN',
-    'reserva_text' => 'hospedate con nosotros y elige tu habitación para cuando estes en punta arenas.'
+    'reserva_text' => 'hospédate con nosotros y elige tu habitación para cuando estés en punta arenas.'
 ];
 
 ?>
